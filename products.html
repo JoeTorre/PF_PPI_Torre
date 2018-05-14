@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uncle Joe - Products</title>
+
+	    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Uncle Joe</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="imgs/uj_logo.png" type="image/x-icon">
+    <link rel="icon" href="imgs/uj_logo.png" type="image/x-icon">
+
+
+	<style type="text/css">
+		/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: black;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+	</style>
+</head>
+<body>
+
+	 <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index_pfppi.html">
+                <img src="imgs/uj_logo.png" alt="Homepage" height="500px">
+            </a>
+
+        </div>
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Collapse</span></a>
+
+            <div class="header-nav__content">
+                <h3>Navigate</h3>
+                
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="index_pfppi.php" title="Index">Home</a></li>
+                    <li><a class="smoothscroll"  href="about.html" title="About">About</a></li>
+                    <li><a class="smoothscroll"  href="products.html" title="Merchandise">Products</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="My Cart">Cart</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="Contact">Reach us</a></li>
+                    <li>
+                    <?php if ($_SESSION['logged-in'] == true) {
+                        echo "<a class=\"smoothscroll\"  href=\"logout.php\" title=\"Session\">Log out</a>";
+                    }else{
+                       echo "<a class=\"smoothscroll\"  href=\"login.php\" title=\"Session\">Log in</a>";
+                    }
+                    ?>
+                    </li>
+                </ul>
+    
+                <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+    
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0"> 
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+        
+
+    </header> <!-- end s-header -->
+
+<a href="products_liq.php"><div class="split left">
+  <div class="centered">
+    <img src="imgs/ejuice_icon.png" alt="E-Liquids">
+    <h2>E-Juices</h2>
+    <p>Some text.</p>
+  </div>
+</div></a>
+
+<a href="products_gad.php"><div class="split right">
+  <div class="centered">
+    <img src="imgs/ecigar_icon.png" alt="Equipment">
+    <h2>Gadgets</h2>
+    <p>Some text here too.</p>
+  </div>
+</div></a>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Uncle Joe - Liquids</title>
+    <title>Uncle Joe - Gadgets</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -41,7 +41,7 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/uj_logo.png" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <?php
@@ -126,7 +126,7 @@
             <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
                 <div class="col-full">
                     <h3 class="subhead">Products</h3>
-                    <h1 class="display-2 display-2--light">E-Juices.</h1>
+                    <h1 class="display-2 display-2--light">Gadgets.</h1>
                 </div>
             </div> <!-- end section-header -->
 
@@ -159,7 +159,7 @@
                     // escape variables for security
 
 
-                    $result = mysqli_query($con,"SELECT * FROM productos where MEDIDA = 'Royal'");
+                    $result = mysqli_query($con,"SELECT * FROM productos where MEDIDA = 'Equipment'");
 
 
                     while($row = mysqli_fetch_array($result)) {

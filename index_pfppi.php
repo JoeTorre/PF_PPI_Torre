@@ -32,8 +32,12 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/uj_logo.png" type="image/x-icon">
+    <link rel="icon" href="imgs/uj_logo.png" type="image/x-icon">
+
+    <?php
+    include("connection.php");
+    ?>
 
 </head>
 
@@ -44,33 +48,47 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/logo.png" alt="Homepage">
+            <a class="site-logo" href="index_pfppi.html">
+                <img src="imgs/uj_logo.png" alt="Homepage" height="500px">
             </a>
 
         </div>
-        <div class="home-content__buttons">
-            <a href="" class="smoothscroll btn btn--stroke" >Iniciar Sesión</a>
-
+        <div class="home-content__buttonlog">
+                <?php if ($_SESSION['logged-in'] == true) {
+                        echo "<a href=\"./logout.php\" class=\"btn btn--stroke\">Log out</a>";
+                    }else{
+                       echo "<a href=\"./login.php\" class=\"btn btn--stroke\">Log in</a>";
+                    }
+                    ?>
         </div>
-
-        <div class="header"><button class="btn green-gradient btn--stroke" >Ini Ses</button></div>
 
         <nav class="header-nav">
 
             <a href="#0" class="header-nav__close" title="close"><span>Collapse</span></a>
 
             <div class="header-nav__content">
-                <h3>Navigate</h3>
+                <h3>-> <?php 
+                if ($_SESSION['logged-in'] == true) {
+                    echo $_SESSION['login_user']; 
+                }else{      
+                    echo "No entro";
+                }
+                ?></h3>
                 
                 <ul class="header-nav__list">
-                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#services" title="services">Products</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Log in</a></li>
-                    <li><a class="smoothscroll"  href="#clients" title="clients">Cart</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Reach us</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Log out</a></li>
+                    <li class="current"><a  href="index_pfppi.php" title="Index">Home</a></li>
+                    <li><a  href="about.php" title="About">About</a></li>
+                    <li><a  href="products.html" title="Merchandise">Products</a></li>
+                    <li><a  href="cart.php" title="My Cart">Cart</a></li>
+                    <li><a  href="#contact" title="Contact">Reach us</a></li>
+                    <li>
+                    <?php if ($_SESSION['logged-in'] == true) {
+                        echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";
+                    }else{
+                       echo "<a  href=\"login.php\" title=\"Session\">Log in</a>";
+                    }
+                    ?>
+                    </li>
                 </ul>
     
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -108,7 +126,7 @@
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="imgs/bghome1.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
@@ -118,14 +136,15 @@
             <div class="row home-content__main">
 
                 <h3>Uncle Joe</h3>
-
+                <br>
+                <br>
                 <h1>
                     Smoke quality.
                 </h1>
 
                 <div class="home-content__buttons">
-                    <a href="#contact" class="btn btn--stroke">
-                        Start a Project
+                    <a href="products.html" class="btn btn--stroke">
+                        Products
                     </a>
                     <a href="./signup.php" class="btn btn--stroke">
                         Sign Up
@@ -133,6 +152,59 @@
                 </div>
 
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">
+
+                <div class="footer-logo"></div>
+                Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
+
+            </div>
+
+            <div class="col-six tab-full right footer-subscribe">
+
+                <h4>Get Notified</h4>
+                <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim optio ut excepturi deserunt iusto porro.</p>
+
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true">
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                        <input type="submit" name="subscribe" value="Subscribe">
+                        <label for="mc-email" class="subscribe-message"></label>
+                    </form>
+                </div>
+
+            </div>
+
+        </div> <!-- end footer-main -->
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Glint 2017</span> 
+                    <span>Site Template by <a href="https://www.colorlib.com/">Colorlib</a></span>  
+                </div>
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
 
     <!-- preloader
     ================================================== -->

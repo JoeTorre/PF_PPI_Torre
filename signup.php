@@ -66,12 +66,13 @@
                 <h3>Navigation</h3>
                 
                 <ul class="header-nav__list">
-                    <li class="current"><a href="./index_pfppi.html" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                    <li class="current"><a class="smoothscroll"  href="#home" title="Index">Home</a></li>
+                    <li><a class="smoothscroll"  href="about.html" title="About">About</a></li>
+                    <li><a class="smoothscroll"  href="products.html" title="Merchandise">Products</a></li>
+                    <li><a class="smoothscroll"  href="login.php" title="Session">Log in</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="My Cart">Cart</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="Contact">Reach us</a></li>
+                    <li><a class="smoothscroll"  href="logout.php" title="Session">Log out</a></li>
                 </ul>
     
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -126,7 +127,7 @@
                 <h3 class="h6">Fill in your info. <br> If you already have an account, please <a href="./login.php">Log in</a>.</h3>
 
                 <form name="givForm" id="givForm" method="post" action="create_user.php" novalidate="novalidate">
-                    <fieldset>
+                    <!--<fieldset> -->
     
                     <div class="form-field">
                         <input name="givName" type="text" id="givName" placeholder="Your Name" minlength="2" required="" aria-required="true" class="full-width">
@@ -154,7 +155,7 @@
                         <input type="number" name="givCC" id="creditcard" placeholder="Credit Card Front Digits" required="" class="full-width">
                     </div>
                     <div class="form-field">
-                        <button type="submit" class="full-width btn--primary">Submit</button>
+                        <button type="submit" class="full-width btn--primary" name="submit_register">Submit</button>
                         <div class="submit-loader">
                             <div class="text-loader">Sending...</div>
                             <div class="s-loader">
@@ -165,7 +166,7 @@
                         </div>
                     </div>
     
-                    </fieldset>
+                    <!--</fieldset> -->
                 </form>
 
                 <!-- contact-warning -->

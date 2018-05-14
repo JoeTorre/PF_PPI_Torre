@@ -326,9 +326,19 @@
    /* Contact Form
     * ------------------------------------------------------ */
     var clContactForm = function() {
+
+        $(document).ready(function(e) {
+            $('#submit').click(function(){
+                var nombre = $('#givName').val();
+                var apellido = $('#givSurname').val();
+                var correo = $('#givEmail').val();
+                var contra = $('#givPassword').val();
+                var fechnac = $('#givDate').val();
+                var num_tarjeta = $('#givCC').val();
+                var direccion = $('#givAddress').val();
         
         /* local validation */
-        $('#contactForm').validate({
+        $('#givForm').validate({
         
             /* submit via ajax */
             submitHandler: function(form) {
@@ -339,7 +349,7 @@
     
                     type: "POST",
                     url: "create_user.php",
-                    //data: $(form).serialize(),
+                    data: {givName: nombre, givSurname: apellido, givEmail: correo, givPassword: contra, givDate: fechnac, givCC: num_tarjeta, givAddress: direccion},
                     beforeSend: function() { 
     
                         sLoader.slideDown("slow");
@@ -374,7 +384,9 @@
             }
     
         });
-    };
+    });
+});
+}
 
 
    /* Animate On Scroll
@@ -461,7 +473,7 @@
         clSmoothScroll();
         clPlaceholder();
         clAlertBoxes();
-        clContactForm();
+        //clContactForm();
         clAOS();
         clAjaxChimp();
         clBackToTop();

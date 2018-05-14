@@ -1,5 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("Location: php/index_pfppi.html");
+$_SESSION["logged-in"] == false;
+header("Location: index_pfppi.php");
 ?>

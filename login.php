@@ -50,14 +50,6 @@
 
     <!-- header
     ================================================== -->
-    <?php
-    require "php/connection.php";
-    require "php/session.php";
-
-    ?>
-
-    <!-- header
-    ================================================== -->
     <header class="s-header">
 
         <div class="header-logo">
@@ -74,12 +66,13 @@
                 <h3>Navigation</h3>
                 
                 <ul class="header-nav__list">
-                    <li class="current"><a href="./index_pfppi.html" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                    <li class="current"><a class="smoothscroll"  href="#home" title="Index">Home</a></li>
+                    <li><a class="smoothscroll"  href="about.html" title="About">About</a></li>
+                    <li><a class="smoothscroll"  href="products.html" title="Merchandise">Products</a></li>
+                    <li><a class="smoothscroll"  href="login.php" title="Session">Log in</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="My Cart">Cart</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="Contact">Reach us</a></li>
+                    <li><a class="smoothscroll"  href="logout.php" title="Session">Log out</a></li>
                 </ul>
     
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -133,13 +126,13 @@
 
                 <h3 class="h6">Use valid credentials. <br> If you don't have an account already, please <a href="./signup.php">Sign up</a>.</h3>
 
-                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                <form name="contactForm" id="contactForm" method="post" action="log_user.php" novalidate="novalidate">
                     <fieldset>
                     <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                        <input name="givEmail" type="email" id="givEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
                     </div>
                     <div class="form-field">
-                        <input type="password" name="password" id="password" placeholder="Your Password" required="" aria-required="true" class="full-width">
+                        <input type="password" name="givPassword" id="givPassword" placeholder="Your Password" required="" aria-required="true" class="full-width">
                     </div>
                     <div class="form-field">
                         <button class="full-width btn--primary">Enter</button>

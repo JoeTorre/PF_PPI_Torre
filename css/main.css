@@ -884,8 +884,9 @@ input[type="button"].btn--primary:focus {
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
-    border: 0.2rem solid #000000;
-    color: #000000;
+    border: 0.2rem solid #39b54a;
+    color: #ffffff;
+    background-color: #39b54a !important;
 }
 
 .btn--pill, button.btn--pill {
@@ -1832,6 +1833,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     padding-top: 6rem;
     text-align: left;
 }
+.home-content__buttonlog {
+    padding-top: 2rem;
+    text-align: right;
+    margin-right: 16rem;
+}
 
 .home-content__buttons .btn {
     width: 215px;
@@ -2396,6 +2402,8 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 .services-list {
     margin-top: 6rem;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .services-list .service-item {
