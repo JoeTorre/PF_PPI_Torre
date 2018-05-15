@@ -170,7 +170,7 @@
                         <div class="item-folio">
                                 
                             <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-shutterbug.jpg" class="thumb-link" title="<?php echo $row['NOMBRE'];?>" data-size="1050x700">
+                                <a href="<?php echo $row['IMAGEN'];?>" class="thumb-link" title="<?php echo $row['NOMBRE'];?>" data-size="1050x700">
                                     <img src="<?php echo $row['IMAGEN'];?>" 
                                          srcset="<?php echo $row['IMAGEN'];?> 1x, <?php echo $row['IMAGEN'];?> 1x" alt="">
                                 </a>
@@ -180,9 +180,9 @@
                                 <h3 class="item-folio__title"><?php echo $row['NOMBRE'];?></h3>
                                 <p class="item-folio__cat"><?php echo $row['DESCRIPCION'];?></p>
                             </div>
-    
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Add to Cart">
-                                <i class="icon-shopping-cart"></i>
+                            <?php $prod = $row['ID_PRODUCTO']; ?>
+                            <a href="insertCart.php" class="item-folio__project-link">
+                               <i class="icon-shopping-cart"></i>
                             </a>
     
                             <div class="item-folio__caption">

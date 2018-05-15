@@ -118,7 +118,7 @@
                     $size = $thumbLink.data('size').split('x'),
                     $width  = $size[0],
                     $height = $size[1];
-         
+                /*
                 var item = {
                     src  : $href,
                     w    : $width,
@@ -130,11 +130,12 @@
                 }
 
                 items.push(item);
+                */
             });
 
             // bind click event
             $folioItems.each(function(i) {
-
+/*
                 $(this).on('click', function(e) {
                     e.preventDefault();
                     var options = {
@@ -143,9 +144,9 @@
                     }
 
                     // initialize PhotoSwipe
-                    var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
-                    lightBox.init();
-                });
+                    //var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                    //lightBox.init();
+                }); */
 
             });
 
@@ -191,15 +192,14 @@
 
 
    /* Masonry
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     var clMasonryFolio = function () {
         
         var containerBricks = $('.masonry');
 
         containerBricks.imagesLoaded(function () {
             containerBricks.masonry({
-                itemSelector: '.masonry__brick',
-                resize: true
+                
             });
         });
     };
@@ -467,8 +467,8 @@
         clMenuOnScrolldown();
         clOffCanvas();
         clPhotoswipe();
-        clStatCount();
-        clMasonryFolio();
+        //clStatCount();
+        //clMasonryFolio();
         clSlickSlider();
         clSmoothScroll();
         clPlaceholder();

@@ -127,8 +127,8 @@
 
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
+            	<h3 class="subhead">Your Items So Far</h3>
             	<h1 class="display-2">Cart</h1>
-                <h3 class="subhead">Your Items So Far</h3>
             </div>
         </div> <!-- end section-header -->
 
@@ -149,16 +149,38 @@
 						</table>
 					</div>
 
+				<?php
+
+                    $con=mysqli_connect("localhost", "root", "", "pf_ppi");
+
+                    // Check connection
+                    if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    }
+
+                    // escape variables for security
+
+
+                    $result = mysqli_query($con,"SELECT p.*, c.* FROM productos p, carrito c, usuarios u WHERE u.ID_USUARIO = c.ID_USUARIO AND p.ID_PRODUCTO = c.ID_PRODUCTO AND  c.ID_USUARIO = '" . $_SESSION['userid'] . "' ");
+
+
+                    while($row = mysqli_fetch_array($result)) {
+
+                ?>
+
 					<div class="table100-body js-pscroll">
 						<table>
 							<tbody>
 								<tr class="row100 body">
-									<td class="cell100 column1">Cereal Crunch</td>
-									<td class="cell100 column2">Uncle Joe</td>
-									<td class="cell100 column3">Royal</td>
-									<td class="cell100 column4">$125</td>
-									<td class="cell100 column5">3</td>
+									<td class="cell100 column1"><?php echo $row['NOMBRE']; ?></td>
+									<td class="cell100 column2"><?php echo $row['MARCA']; ?></td>
+									<td class="cell100 column3"><?php echo $row['MEDIDA']; ?></td>
+									<td class="cell100 column4">$ <?php echo $row['PRECIO']; ?> MXN</td>
+									<td class="cell100 column5"><?php echo $row['CANTIDAD']; ?></td>
 								</tr>
+								<?php
+									}
+								?>
 							</tbody>
 						</table>
 					</div>

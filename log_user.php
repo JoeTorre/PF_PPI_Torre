@@ -51,6 +51,7 @@ if($link === false){
      if($count == 1){
         session_start();
         $_SESSION['login_user'] = $nombre;
+        $_SESSION['userid'] = $idu;
         $_SESSION['logged-in'] = true;
      	header('Location: index_pfppi.php');
     	//echo "Records inserted successfully.";

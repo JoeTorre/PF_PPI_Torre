@@ -54,12 +54,18 @@
 
         </div>
         <div class="home-content__buttonlog">
-                <?php if ($_SESSION['logged-in'] == true) {
+                <?php 
+            if (isset($_SESSION['logged-in'])) {
+                if ($_SESSION['logged-in'] == true) {
                         echo "<a href=\"./logout.php\" class=\"btn btn--stroke\">Log out</a>";
                     }else{
                        echo "<a href=\"./login.php\" class=\"btn btn--stroke\">Log in</a>";
                     }
+                }else{
+                    echo "<a href=\"./login.php\" class=\"btn btn--stroke\">Log in</a>";
+                }
                     ?>
+                
         </div>
 
         <nav class="header-nav">

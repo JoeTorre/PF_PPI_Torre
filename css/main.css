@@ -2644,7 +2644,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .item-folio__project-link {
-    display: block;
+    display: block; 
     color: #FFFFFF;
     box-shadow: 0 0 0 1px #FFFFFF;
     border-radius: 50%;
@@ -2659,7 +2659,7 @@ html.no-csstransitions .home-content__main {
     visibility: hidden;
     -webkit-transform: translate3d(0, -100%, 0);
     -ms-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); 
 }
 
 .item-folio__project-link i {
@@ -2711,7 +2711,7 @@ html.no-csstransitions .home-content__main {
 .item-folio:hover .item-folio__text {
     opacity: 1;
     visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
+    .webkit-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
