@@ -171,7 +171,7 @@
 
 
                     while($row = mysqli_fetch_array($result)) {
-
+                    	$idprod = $row['ID_PRODUCTO'];
                 ?>
 
 					<div class="table100-body js-pscroll">
@@ -183,14 +183,15 @@
 									<td class="cell100 column3"><?php echo $row['MEDIDA']; ?></td>
 									<td class="cell100 column4"><?php echo $row['CANTIDAD']; ?></td>
 									<td class="cell100 column5">$ <?php $subtotal = $row['PRECIO'] * $row['CANTIDAD']; echo $subtotal; ?> MXN</td>
-									<td class="cell100 column6"><button class="btnn btn--strokey">Delete</button></td>
+									<td class="cell100 column6"><form action="deleteProduct.php" method="POST"> <input type="hidden" value="<?php echo $idprod; ?>" name="delete">
+										<button type="submit"  class="btnn btn--strokey">Delete</button></form></td>
 								</tr>
 								<?php
 									$total = $total + $subtotal;
 									}
 								?>
 								<tr class="row100 body">
-									<td class="cell100 column1" style="color: #39b54a">Total:</td>
+									<td class="cell100 column1" style="color: #39b54a">TOTAL:</td>
 									<td class="cell100 column2"></td>
 									<td class="cell100 column3"></td>
 									<td class="cell100 column4"></td>
