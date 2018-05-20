@@ -814,6 +814,31 @@ input[type="button"] {
     border: .2rem solid #c5c5c5;
 }
 
+.btnn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    display: inline-block;
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    height: 1.4rem;
+    line-height: calc(1.8rem - .4rem);
+    padding: 0 1rem;
+    margin: 0 .3rem 0.2rem 0;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #c5c5c5;
+    border: .2rem solid #c5c5c5;
+}
+
 .btn:hover,
 button:hover,
 input[type="submit"]:hover,
@@ -887,6 +912,19 @@ input[type="button"].btn--primary:focus {
     border: 0.2rem solid #39b54a;
     color: #ffffff;
     background-color: #39b54a !important;
+}
+
+
+.btn--strokey, button.btn--strokey {
+    background: transparent !important;
+    border: 0.2rem solid #ff0000;
+    color: #ff0000;
+}
+
+.btn--strokey:hover, button.btn--strokey:hover {
+    border: 0.2rem solid #ff0000;
+    color: #ffffff;
+    background-color: #FF0000 !important;
 }
 
 .btn--pill, button.btn--pill {
@@ -1834,6 +1872,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     text-align: left;
 }
 .home-content__buttonlog {
+    padding-top: 2rem;
+    text-align: right;
+    margin-right: 16rem;
+}
+
+.home-content__buttonlogo {
     padding-top: 2rem;
     text-align: right;
     margin-right: 16rem;

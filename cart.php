@@ -124,12 +124,19 @@
             	<h3 class="subhead">Your Items So Far</h3>
             	<h1 class="display-2">Cart</h1>
             </div>
+
+            <ul class="home-social">
+            <li>
+                <a href="products.html"><i class="icon-gift" aria-hidden="true"></i><span>Buy More</span></a>
+            </li>
+        </ul> 
+
         </div> <!-- end section-header -->
 
         <div class="services-list"> 
-        	
+
         		<div class="home-content__buttonlog">
-					<a href="./action_checkout.php" class="btn btn--strokey">BUY</a>
+					<a href="./action_checkout.php" class="btn btn--stroke">BUY</a>
 				</div>
 
             <div class="table100 ver3 m-b-110">
@@ -140,15 +147,16 @@
 									<th class="cell100 column1">Name</th>
 									<th class="cell100 column2">Brand</th>
 									<th class="cell100 column3">Size</th>
-									<th class="cell100 column4">Price</th>
-									<th class="cell100 column5">Quantity</th>
+									<th class="cell100 column4">Quantity</th>
+									<th class="cell100 column5">Price</th>
+									<th class="cell100 column6">Option</th>
 								</tr>
 							</thead>
 						</table>
 					</div>
 
 				<?php
-
+					$total = 0;
                     $con=mysqli_connect("localhost", "root", "", "pf_ppi");
 
                     // Check connection
@@ -173,12 +181,22 @@
 									<td class="cell100 column1"><?php echo $row['NOMBRE']; ?></td>
 									<td class="cell100 column2"><?php echo $row['MARCA']; ?></td>
 									<td class="cell100 column3"><?php echo $row['MEDIDA']; ?></td>
-									<td class="cell100 column4">$ <?php echo $row['PRECIO']; ?> MXN</td>
-									<td class="cell100 column5"><?php echo $row['CANTIDAD']; ?></td>
+									<td class="cell100 column4"><?php echo $row['CANTIDAD']; ?></td>
+									<td class="cell100 column5">$ <?php $subtotal = $row['PRECIO'] * $row['CANTIDAD']; echo $subtotal; ?> MXN</td>
+									<td class="cell100 column6"><button class="btnn btn--strokey">Delete</button></td>
 								</tr>
 								<?php
+									$total = $total + $subtotal;
 									}
 								?>
+								<tr class="row100 body">
+									<td class="cell100 column1" style="color: #39b54a">Total:</td>
+									<td class="cell100 column2"></td>
+									<td class="cell100 column3"></td>
+									<td class="cell100 column4"></td>
+									<td class="cell100 column5" style="color: #39b54a">$ <?php echo $total; ?> MXN</td>
+									<td class="cell100 column4"></td>
+								</tr>
 							</tbody>
 						</table>
 					</div>

@@ -53,13 +53,13 @@
     ================================================== -->
     <section id='services' class="s-services">
 
-        <div class="home-content__buttonlog">
-            <a href="./logout.php" class="btn btn--stroke">Log Out</a>
+        <div class="home-content__buttonlogo">
+            <a href="./logout.php" class="btn btn--strokey">Log Out</a>
         </div>
 
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
-                <h3 class="subhead">What We Do</h3>
+                <h3 class="subhead">Store Overview</h3>
                 <h1 class="display-2">ADMIN</h1>
             </div>
         </div> <!-- end section-header -->

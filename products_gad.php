@@ -97,12 +97,6 @@
                     <li>
                         <a href="#"><i class="fa fa-instagram"></i></a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
                 </ul>
 
             </div> <!-- end header-nav__content -->
@@ -135,7 +129,7 @@
                 <a href="cart.php"><i class="icon-shopping-cart" aria-hidden="true"></i><span>Cart</span></a>
             </li>
             <li>
-                <a href="#0"><i class="icon-user" aria-hidden="true"></i><span>Profile</span></a>
+                <a href="products_lig.php"><i class="icon-juice" aria-hidden="true"></i><span>E-Juices</span></a>
             </li>
         </ul> 
 

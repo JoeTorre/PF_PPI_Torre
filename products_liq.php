@@ -127,6 +127,10 @@
                 <div class="col-full">
                     <h3 class="subhead">Products</h3>
                     <h1 class="display-2 display-2--light">E-Juices.</h1>
+                    <h3 class="subhead" id="h3"></h3>
+                    <br>
+                    <button class="btn btn--stroke" id="btnClickN">Noble</button>
+                    <button class="btn btn--stroke" id="btnClickR">Royal</button>
                 </div>
             </div> <!-- end section-header -->
 
@@ -135,7 +139,7 @@
                 <a href="cart.php"><i class="icon-shopping-cart" aria-hidden="true"></i><span>Cart</span></a>
             </li>
             <li>
-                <a href="#0"><i class="icon-user" aria-hidden="true"></i><span>Profile</span></a>
+                <a href="products_gad.php"><i class="icon-gift" aria-hidden="true"></i><span>Gadgets</span></a>
             </li>
         </ul> 
 
@@ -143,7 +147,7 @@
 
         
 
-        <div class="row works-content">
+        <div class="row works-content" id="1">
             <div class="col-full masonry-wrap">
                 <div class="masonry">
 
@@ -200,12 +204,90 @@
             </div> <!-- end col-full -->
         </div> <!-- end works-content -->
 
+        <div class="row works-content" id="2">
+            <div class="col-full masonry-wrap">
+                <div class="masonry">
+
+                <?php
+
+                    $con=mysqli_connect("localhost", "root", "", "pf_ppi");
+
+                    // Check connection
+                    if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    }
+
+                    // escape variables for security
+
+
+                    $result = mysqli_query($con,"SELECT * FROM productos where MEDIDA = 'Noble'");
+
+
+                    while($row = mysqli_fetch_array($result)) {
+
+                ?>
+    
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+                                
+                            <div class="item-folio__thumb">
+                                <a href="<?php echo $row['IMAGEN'];?>" class="thumb-link" title="<?php echo $row['NOMBRE'];?>" data-size="1050x700">
+                                    <img src="<?php echo $row['IMAGEN'];?>" 
+                                         srcset="<?php echo $row['IMAGEN'];?> 1x, <?php echo $row['IMAGEN'];?> 1x" alt="">
+                                </a>
+                            </div>
+    
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title"><?php echo $row['NOMBRE'];?></h3>
+                                <p class="item-folio__cat"><?php echo $row['DESCRIPCION'];?></p>
+                            </div>
+                            
+                            <a href="<?php $_SESSION['liq-prod'] = $row['ID_PRODUCTO']; ?>insertCart.php" class="item-folio__project-link">
+                               <i class="icon-shopping-cart"></i>
+                            </a>
+    
+                            <div class="item-folio__caption">
+                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                            </div>
+    
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                    <?php
+                        }
+                    ?>
+
+                </div> <!-- end masonry -->
+            </div> <!-- end col-full -->
+        </div> <!-- end works-content -->
+
     </section> <!-- end s-works -->
 
-        ================================================== -->
+      <!--  ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+
+            $('#1').hide();
+            $('#2').hide();
+
+    $('#btnClickN').on('click',function(){
+            $('#1').hide();
+            $('#2').show();
+            document.getElementById("h3").innerHTML = "Noble";
+            $('#btnClickN').hide();
+            $('#btnClickR').show();
+    });
+
+    $('#btnClickR').on('click',function(){
+            $('#2').hide();
+            $('#1').show();
+            document.getElementById("h3").innerHTML = "Royal";
+            $('#btnClickR').hide();
+            $('#btnClickN').show();
+    });
+    </script>
 
 </body>
 

@@ -57,7 +57,7 @@
                 <?php 
             if (isset($_SESSION['logged-in'])) {
                 if ($_SESSION['logged-in'] == true) {
-                        echo "<a href=\"./logout.php\" class=\"btn btn--stroke\">Log out</a>";
+                        echo "<a href=\"./logout.php\" class=\"btn btn--strokey\">Log out</a>";
                     }else{
                        echo "<a href=\"./login.php\" class=\"btn btn--stroke\">Log in</a>";
                     }
