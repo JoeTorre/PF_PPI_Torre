@@ -8,15 +8,15 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
     
-    if (isset($_GET["prod"]))
+    if (isset($_SESSION["liq-prod"]))
     {
-        $idproducto = $_GET["prod"];
+        $idproducto = $_SESSION["liq-prod"];
     }
     else
     {
         $idproducto = null;
     }
-
+    echo $idproducto;
     $sql = "INSERT INTO carrito(ID_USUARIO, ID_PRODUCTO, CANTIDAD) VALUES ('" . $_SESSION['userid'] . "', '" . $idproducto . "', 1);";
 
      if(mysqli_query($link, $sql)){

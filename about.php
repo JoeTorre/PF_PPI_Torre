@@ -107,7 +107,10 @@
             <span class="header-menu-text">Menu</span>
             <span class="header-menu-icon"></span>
         </a>
-        
+       
+    <?php
+    include("connection.php");
+    ?>
 
     </header> <!-- end s-header -->
 

@@ -180,8 +180,8 @@
                                 <h3 class="item-folio__title"><?php echo $row['NOMBRE'];?></h3>
                                 <p class="item-folio__cat"><?php echo $row['DESCRIPCION'];?></p>
                             </div>
-                            <?php $prod = $row['ID_PRODUCTO']; ?>
-                            <a href="insertCart.php" class="item-folio__project-link">
+                            
+                            <a href="<?php $_SESSION['liq-prod'] = $row['ID_PRODUCTO']; ?>insertCart.php" class="item-folio__project-link">
                                <i class="icon-shopping-cart"></i>
                             </a>
     

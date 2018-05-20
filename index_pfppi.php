@@ -74,10 +74,10 @@
 
             <div class="header-nav__content">
                 <h3>-> <?php 
-                if ($_SESSION['logged-in'] == true) {
+                if (isset($_SESSION['logged-in'])) {
                     echo $_SESSION['login_user']; 
                 }else{      
-                    echo "No entro";
+                    echo "Log in or Sign up!";
                 }
                 ?></h3>
                 
@@ -88,7 +88,7 @@
                     <li><a  href="cart.php" title="My Cart">Cart</a></li>
                     <li><a  href="#contact" title="Contact">Reach us</a></li>
                     <li>
-                    <?php if ($_SESSION['logged-in'] == true) {
+                    <?php if (isset($_SESSION['logged-in'])) {
                         echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";
                     }else{
                        echo "<a  href=\"login.php\" title=\"Session\">Log in</a>";

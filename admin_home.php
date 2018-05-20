@@ -10,7 +10,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Glint</title>
+    <title>Uncle Joe - ADMIN</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -34,6 +34,17 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <?php
+    include("connection.php");
+
+    if (isset($_SESSION['power'])) {
+       // echo "Hola";
+    }else{
+        header('Location: index_pfppi.php');
+    }
+    ?>
+
+
 </head>
 
 <body id="top">
@@ -42,10 +53,14 @@
     ================================================== -->
     <section id='services' class="s-services">
 
+        <div class="home-content__buttonlog">
+            <a href="./logout.php" class="btn btn--stroke">Log Out</a>
+        </div>
+
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">What We Do</h3>
-                <h1 class="display-2">We’ve got everything you need to launch and grow your business</h1>
+                <h1 class="display-2">ADMIN</h1>
             </div>
         </div> <!-- end section-header -->
 

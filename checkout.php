@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Uncle Joe - Cart</title>
+	<title>Uncle Joe - About</title>
 
     <!--- basic page needs
     ================================================== -->
@@ -20,16 +20,6 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
-    	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main2.css">
-<!--===============================================================================================-->
-	
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
 
     <!-- script
     ================================================== -->
@@ -58,6 +48,11 @@
             </a>
 
         </div>
+        <div class="home-content__buttonlog">
+                    <a href="./login.php" class="btn btn--stroke">
+                        Log in
+                    </a>
+        </div>
 
         <nav class="header-nav">
 
@@ -74,9 +69,9 @@
                 
                 <ul class="header-nav__list">
                     <li class="current"><a  href="index_pfppi.php" title="Index">Home</a></li>
-                    <li><a  href="about.html" title="About">About</a></li>
+                    <li><a  href="about.php" title="About">About</a></li>
                     <li><a  href="products.html" title="Merchandise">Products</a></li>
-                    <li><a  href="#clients" title="My Cart">Cart</a></li>
+                    <li><a  href="cart.php" title="My Cart">Cart</a></li>
                     <li><a  href="#contact" title="Contact">Reach us</a></li>
                     <li>
                     <?php if ($_SESSION['logged-in'] == true) {
@@ -100,6 +95,12 @@
                     <li>
                         <a href="#"><i class="fa fa-instagram"></i></a>
                     </li>
+                    <li>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </li>
                 </ul>
 
             </div> <!-- end header-nav__content -->
@@ -114,83 +115,51 @@
 
     </header> <!-- end s-header -->
 
-
- <!-- services
+	 <!-- about
     ================================================== -->
-    <section id='services' class="s-services">
+    <section id='about' class="s-about">
 
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
-            	<h3 class="subhead">Your Items So Far</h3>
-            	<h1 class="display-2">Cart</h1>
+                <h3 class="subhead subhead--dark">Know More About Joe</h3>
+                <h1 class="display-1 display-1--light">It's Uncle Joe</h1>
             </div>
         </div> <!-- end section-header -->
 
-        <div class="services-list"> 
-        	
-        		<div class="home-content__buttonlog">
-					<a href="./action_checkout.php" class="btn btn--strokey">BUY</a>
-				</div>
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. 
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
 
-            <div class="table100 ver3 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-								<tr class="row100 head">
-									<th class="cell100 column1">Name</th>
-									<th class="cell100 column2">Brand</th>
-									<th class="cell100 column3">Size</th>
-									<th class="cell100 column4">Price</th>
-									<th class="cell100 column5">Quantity</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+                
+            <div class="col-block stats__col ">
+                <div class="stats__count">2017</div>
+                <h5>Established</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">356</div>
+                <h5>Number of Flasks</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">109</div>
+                <h5>Something Else</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">102</div>
+                <h5>Happy Clients</h5> 
+            </div>
 
-				<?php
+        </div> <!-- end about-stats -->
 
-                    $con=mysqli_connect("localhost", "root", "", "pf_ppi");
+        <div class="about__line"></div>
 
-                    // Check connection
-                    if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
+    </section> <!-- end s-about -->
 
-                    // escape variables for security
-
-
-                    $result = mysqli_query($con,"SELECT p.*, c.* FROM productos p, carrito c, usuarios u WHERE u.ID_USUARIO = c.ID_USUARIO AND p.ID_PRODUCTO = c.ID_PRODUCTO AND  c.ID_USUARIO = '" . $_SESSION['userid'] . "' ");
-
-
-                    while($row = mysqli_fetch_array($result)) {
-
-                ?>
-
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
-								<tr class="row100 body">
-									<td class="cell100 column1"><?php echo $row['NOMBRE']; ?></td>
-									<td class="cell100 column2"><?php echo $row['MARCA']; ?></td>
-									<td class="cell100 column3"><?php echo $row['MEDIDA']; ?></td>
-									<td class="cell100 column4">$ <?php echo $row['PRECIO']; ?> MXN</td>
-									<td class="cell100 column5"><?php echo $row['CANTIDAD']; ?></td>
-								</tr>
-								<?php
-									}
-								?>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-       </div> <!--end services-list -->
-
-
-
-    </section> <!-- end s-services -->
-
-        <!-- Java Script
+    <!-- Java Script
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>

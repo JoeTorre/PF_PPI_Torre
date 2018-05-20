@@ -74,7 +74,7 @@
 
                 <h3 class="h6">Full access.</h3>
 
-                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                <form name="contactForm" id="contactForm" method="post" action="log_admin.php" novalidate="novalidate">
                     <fieldset>
                     <div class="form-field">
                         <input name="adminEmail" type="email" id="adminEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
@@ -157,9 +157,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-        $('#dp1').datepicker();
-    </script>
+
 
 </body>
 
