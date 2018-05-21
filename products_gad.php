@@ -129,7 +129,7 @@
                 <a href="cart.php"><i class="icon-shopping-cart" aria-hidden="true"></i><span>Cart</span></a>
             </li>
             <li>
-                <a href="products_lig.php"><i class="icon-juice" aria-hidden="true"></i><span>E-Juices</span></a>
+                <a href="products_liq.php"><i class="icon-juice" aria-hidden="true"></i><span>E-Juices</span></a>
             </li>
         </ul> 
 

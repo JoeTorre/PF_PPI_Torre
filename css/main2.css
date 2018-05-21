@@ -176,24 +176,33 @@ th, td {
 }
 
 .column1 {
-  width: 33%;
+  width: 17%;
   padding-left: 40px;
 }
 
 .column2 {
-  width: 13%;
+  width: 16%;
+  text-align: center;
 }
 
 .column3 {
-  width: 22%;
+  width: 16%;
+  text-align: center;
 }
 
 .column4 {
-  width: 19%;
+  width: 16%;
+  text-align: center;
 }
 
 .column5 {
-  width: 13%;
+  width: 16%;
+  text-align: center;
+}
+
+.column6 {
+  width: 16%;
+  text-align: center;
 }
 
 .table100-head th {

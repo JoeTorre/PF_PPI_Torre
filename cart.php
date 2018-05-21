@@ -127,9 +127,9 @@
 
             <ul class="home-social">
             <li>
-                <a href="products.html"><i class="icon-gift" aria-hidden="true"></i><span>Buy More</span></a>
+                <a href="products.html"><i class="icon-gift" aria-hidden="true"></i><span>Buy</span></a>
             </li>
-        </ul> 
+        	</ul> 
 
         </div> <!-- end section-header -->
 
