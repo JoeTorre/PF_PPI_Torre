@@ -24,6 +24,12 @@
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
 
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -117,23 +123,22 @@
                         <table>
                             <tbody>
                                 <tr class="row100 body">
-                                    <td class="cell100 column1"><?php echo $row['COMPRA']; ?></td>
-                                    <td class="cell100 column2"><?php echo $row['NOMBRE']; ?></td>
-                                    <td class="cell100 column3"><?php echo $row['NOMBREE']; ?></td>
-                                    <td class="cell100 column4"><?php echo $row['CANTIDAD']; ?></td>
-                                    <td class="cell100 column5">$ <?php $subtotal = $row['PRECIO'] * $row['CANTIDAD']; echo $subtotal; ?> MXN</td>
+                                    <td class="cell100 column1" style="text-align: center;"><?php echo $row['COMPRA']; ?></td>
+                                    <td class="cell100 column2" style="text-align: center;"><?php echo $row['NOMBRE']; ?></td>
+                                    <td class="cell100 column3" style="text-align: center;"><?php echo $row['NOMBREE']; ?></td>
+                                    <td class="cell100 column4" style="text-align: center;"><?php echo $row['CANTIDAD']; ?></td>
+                                    <td class="cell100 column5" style="text-align: center;">$ <?php $subtotal = $row['PRECIO'] * $row['CANTIDAD']; echo $subtotal; ?> MXN</td>
                                 </tr>
                                 <?php
                                     $total = $total + $subtotal;
                                     }
                                 ?>
                                 <tr class="row100 body">
-                                    <td class="cell100 column1" style="color: #39b54a">TOTAL REVENUE:</td>
+                                    <td class="cell100 column1" style="color: #39b54a">REVENUE:</td>
                                     <td class="cell100 column2"></td>
                                     <td class="cell100 column3"></td>
                                     <td class="cell100 column4"></td>
                                     <td class="cell100 column5" style="color: #39b54a">$ <?php echo $total; ?> MXN</td>
-                                    <td class="cell100 column4"></td>
                                 </tr>
                             </tbody>
                         </table>

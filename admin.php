@@ -83,7 +83,7 @@
                         <input type="password" name="adminPassword" id="adminPassword" placeholder="Password" required="" aria-required="true" class="full-width">
                     </div>
                     <div class="form-field">
-                        <button class="full-width btn--primary">Submit</button>
+                        <button class="full-width btn--primary" style="height: 5rem; font-size: 1.5rem;">Submit</button>
                         <div class="submit-loader">
                             <div class="text-loader">Sending...</div>
                             <div class="s-loader">

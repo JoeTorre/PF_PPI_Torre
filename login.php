@@ -63,16 +63,28 @@
             <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
 
             <div class="header-nav__content">
-                <h3>Navigation</h3>
+                <h3>-> <?php 
+                if (isset($_SESSION['logged-in'])) {
+                    echo $_SESSION['login_user']; 
+                }else{      
+                    echo "Sign up or Log in";
+                }
+                ?></h3>
                 
                 <ul class="header-nav__list">
-                    <li class="current"><a class="smoothscroll"  href="#home" title="Index">Home</a></li>
-                    <li><a class="smoothscroll"  href="about.html" title="About">About</a></li>
-                    <li><a class="smoothscroll"  href="products.html" title="Merchandise">Products</a></li>
-                    <li><a class="smoothscroll"  href="login.php" title="Session">Log in</a></li>
-                    <li><a class="smoothscroll"  href="#clients" title="My Cart">Cart</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="Contact">Reach us</a></li>
-                    <li><a class="smoothscroll"  href="logout.php" title="Session">Log out</a></li>
+                    <li class="current"><a  href="index_pfppi.php" title="Index">Home</a></li>
+                    <li><a  href="about.php" title="About">About</a></li>
+                    <li><a  href="products.html" title="Merchandise">Products</a></li>
+                    <li><a  href="cart.php" title="My Cart">Cart</a></li>
+                    <li><a  href="index_pfppi.php#contact" title="Contact">Reach us</a></li>
+                    <li>
+                    <?php if (isset($_SESSION['logged-in'])) {
+                        echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";
+                    }else{
+                       echo "<a  href=\"login.php\" title=\"Session\">Log in</a>";
+                    }
+                    ?>
+                    </li>
                 </ul>
     
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -86,12 +98,6 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
                     </li>
                 </ul>
 
@@ -135,7 +141,7 @@
                         <input type="password" name="givPassword" id="givPassword" placeholder="Your Password" required="" aria-required="true" class="full-width">
                     </div>
                     <div class="form-field">
-                        <button class="full-width btn--primary">Enter</button>
+                        <button class="full-width btn--primary" style="height: 5rem; font-size: 1.5rem;">Enter</button>
                         <div class="submit-loader">
                             <div class="text-loader">Sending...</div>
                             <div class="s-loader">

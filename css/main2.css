@@ -220,6 +220,7 @@ th, td {
 .table100 {
   position: relative;
   padding-top: 60px;
+  padding-right: 3rem;
 }
 
 .table100-head {
