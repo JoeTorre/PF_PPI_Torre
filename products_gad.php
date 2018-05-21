@@ -42,7 +42,7 @@
     <!-- favicons
     ================================================== -->
     <link rel="shortcut icon" href="imgs/uj_logo.png" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/uj_logo.png" type="image/x-icon">
 
     <?php
     include("connection.php");
@@ -157,7 +157,7 @@
 
 
                     while($row = mysqli_fetch_array($result)) {
-
+                            $prod = $row['ID_PRODUCTO'];
                 ?>
     
                     <div class="masonry__brick" data-aos="fade-up">
@@ -173,10 +173,11 @@
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title"><?php echo $row['NOMBRE'];?></h3>
                                 <p class="item-folio__cat"><?php echo $row['DESCRIPCION'];?></p>
+                                <p class="item-folio__cat">$ <?php echo $row['PRECIO'];?> MXN</p>
                             </div>
     
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Add to Cart">
-                                <i class="icon-shopping-cart"></i>
+                            <a href="insertCart.php?prod=<?php echo $prod; ?>" class="item-folio__project-link">
+                               <i class="icon-shopping-cart"></i>
                             </a>
     
                             <div class="item-folio__caption">
@@ -196,7 +197,7 @@
 
     </section> <!-- end s-works -->
 
-        ================================================== -->
+       <!-- ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>

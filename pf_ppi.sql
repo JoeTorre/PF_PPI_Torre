@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2018 at 10:06 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Erstellungszeit: 21. Mai 2018 um 22:53
+-- Server-Version: 10.1.30-MariaDB
+-- PHP-Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pf_ppi`
+-- Datenbank: `pf_ppi`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `carrito`
+-- Tabellenstruktur für Tabelle `carrito`
 --
 
 CREATE TABLE `carrito` (
@@ -38,7 +38,7 @@ CREATE TABLE `carrito` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `historial`
+-- Tabellenstruktur für Tabelle `historial`
 --
 
 CREATE TABLE `historial` (
@@ -50,7 +50,7 @@ CREATE TABLE `historial` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `historial`
+-- Daten für Tabelle `historial`
 --
 
 INSERT INTO `historial` (`ID_HISTORIAL`, `ID_USUARIO`, `ID_PRODUCTO`, `COMPRA`, `CANTIDAD`) VALUES
@@ -62,7 +62,7 @@ INSERT INTO `historial` (`ID_HISTORIAL`, `ID_USUARIO`, `ID_PRODUCTO`, `COMPRA`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `productos`
+-- Tabellenstruktur für Tabelle `productos`
 --
 
 CREATE TABLE `productos` (
@@ -78,7 +78,7 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `productos`
+-- Daten für Tabelle `productos`
 --
 
 INSERT INTO `productos` (`ID_PRODUCTO`, `NOMBRE`, `MEDIDA`, `DESCRIPCION`, `IMAGEN`, `PRECIO`, `EXISTENCIA`, `MARCA`, `ORIGEN`) VALUES
@@ -97,12 +97,27 @@ INSERT INTO `productos` (`ID_PRODUCTO`, `NOMBRE`, `MEDIDA`, `DESCRIPCION`, `IMAG
 (13, 'Vanilla Cupcake', 'Noble', '30ml Vanilla Cupcake flavoured E-liquid (70% VG / 30% PG USP grade).', 'imgs/Liq_VanillaCupcake.jpg', 125, 10, 'Uncle Joe', 'MEX'),
 (14, 'Vanilla Cupcake', 'Royal', '60ml Vanilla Cupcake flavoured E-liquid (70% VG / 30% PG USP grade).', 'imgs/Liq_VanillaCupcake.jpg', 220, 10, 'Uncle Joe', 'MEX'),
 (15, 'Kensei RTA', 'Equipment', 'E-liquid Atomizer (1x 510 delrin drip tip).', 'imgs/Eq_KenseiRTAbyVandyVape.jpg', 748, 5, 'Vandy Vape', 'USA'),
-(16, 'Pharaoh RTA', 'Equipment', 'E-cigar vape dispenser gadget.', '/imgs/Eq_PharaohRTA.jpg', 525, 3, 'Vandy Vape', 'USA');
+(16, 'Pharaoh RTA', 'Equipment', 'E-cigar vape dispenser gadget.', 'imgs/Eq_PharaohRTA.jpg', 525, 3, 'Vandy Vape', 'USA'),
+(17, 'Extra Suorin Air', 'Equipment', 'Extra battery for E-cigar', 'imgs/Eq_RepuestoSuorinAir.jpg', 733, 2, 'Suorin Air', 'USA'),
+(18, 'Smoke Alien Baby', 'Equipment', 'Small E-cigar.', 'imgs/Eq_SmokAlienBaby.jpg', 1021, 4, 'Smoke Alien', 'USA'),
+(19, 'Smoke Alien Mod', 'Equipment', 'Big e-cigar.', 'imgs/Eq_SmokAlienMod.jpg', 1655, 5, 'Smoke Alien', 'USA'),
+(20, 'Suorin Air', 'Equipment', 'Squared e-cigar.', 'imgs/Eq_SuorinAir.jpg', 2100, 3, 'Suorin Air', 'USA'),
+(21, 'Suorin Drop Kit', 'Equipment', 'E-juice dispenser.', 'imgs/Eq_SuorinDropKit.jpg', 438, 6, 'Suorin Air', 'USA'),
+(22, 'Tsunami 24', 'Equipment', 'E-cigar with metal mouth tubes.', 'imgs/Eq_Tsunami24.jpg', 3250, 5, 'Tsunami', 'JPN'),
+(23, 'Vaper Stuff VP RDA', 'Equipment', 'Mouth tubes for e-cigars.', 'imgs/Eq_VaperStuff-VPRDA.jpg', 340, 10, 'Vaper Stuff', 'CAN'),
+(24, 'Vaporesso Revenger Kit', 'Equipment', 'E-cigars with kit.', 'imgs/Eq_VaporessoRevengerKit.jpg', 1000, 7, 'Vaporesso', 'ITA'),
+(25, 'Vaporesso Swag Kit', 'Equipment', 'E-cigar with kit with battery blue.', 'imgs/Eq_VaporessoSwagKit.jpg', 1500, 4, 'Vaporesso', 'ITA'),
+(26, 'Vaporesso Target Mini', 'Equipment', 'E-cigar with mini kit.', 'imgs/Eq_VaporessoTargetMini.jpg', 730, 3, 'Vaporesso', 'ITA'),
+(27, 'VGod Elite DTA', 'Equipment', 'Complete e-cigar set with equipment.', 'imgs/Eq_VGodEliteDTA.jpg', 1460, 4, 'VGod', 'USA'),
+(28, 'Wismec Releux RX Gen 3', 'Equipment', '3rd Generation E-cigar.', 'imgs/Eq_WismecReleuxRXGen3.jpg', 890, 5, 'Wismec', 'USA'),
+(29, 'Wismec Reuleaux RX2-20700', 'Equipment', 'Super e-cigar.', 'imgs/Eq_WismecReuleauxRX2-20700.jpg', 2300, 4, 'Wismec', 'USA'),
+(30, 'Wismec Sinuous Ravage 230 Mod', 'Equipment', 'Extra long battery e-cigar.', 'imgs/Eq_WismecSinuousRavage230Mod.jpg', 2700, 3, 'Wismec', 'USA'),
+(31, 'Wotofo Bravo RTA', 'Equipment', 'Mouth tube for Wotobo e-cigar.', 'imgs/Eq_WotofoBravoRTA.jpg', 530, 9, 'Bravo', 'USA');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Tabellenstruktur für Tabelle `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -118,7 +133,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usuarios`
+-- Daten für Tabelle `usuarios`
 --
 
 INSERT INTO `usuarios` (`ID_USUARIO`, `NOMBRE`, `APELLIDO`, `CORREO`, `CONTRA`, `FECHNAC`, `NUM_TARJETA`, `DIRECCION`, `UTIPO`) VALUES
@@ -126,11 +141,11 @@ INSERT INTO `usuarios` (`ID_USUARIO`, `NOMBRE`, `APELLIDO`, `CORREO`, `CONTRA`, 
 (9, 'Edu', 'Tor', 'eduardo.torre@anahuac.mx', 'alumno', '1995-12-08', '1111111111111111', 'Lomas Anahuac', 'USER');
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `carrito`
+-- Indizes für die Tabelle `carrito`
 --
 ALTER TABLE `carrito`
   ADD PRIMARY KEY (`ID_CARRITO`),
@@ -139,7 +154,7 @@ ALTER TABLE `carrito`
   ADD KEY `ID_PRODUCTO_idx` (`ID_PRODUCTO`);
 
 --
--- Indexes for table `historial`
+-- Indizes für die Tabelle `historial`
 --
 ALTER TABLE `historial`
   ADD PRIMARY KEY (`ID_HISTORIAL`),
@@ -148,14 +163,14 @@ ALTER TABLE `historial`
   ADD KEY `ID_PRODUCTO_idx` (`ID_PRODUCTO`);
 
 --
--- Indexes for table `productos`
+-- Indizes für die Tabelle `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`ID_PRODUCTO`),
   ADD UNIQUE KEY `ID_PRODUCTO_UNIQUE` (`ID_PRODUCTO`);
 
 --
--- Indexes for table `usuarios`
+-- Indizes für die Tabelle `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID_USUARIO`),
@@ -163,46 +178,46 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `CORREO_UNIQUE` (`CORREO`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `carrito`
+-- AUTO_INCREMENT für Tabelle `carrito`
 --
 ALTER TABLE `carrito`
   MODIFY `ID_CARRITO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `historial`
+-- AUTO_INCREMENT für Tabelle `historial`
 --
 ALTER TABLE `historial`
   MODIFY `ID_HISTORIAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `productos`
+-- AUTO_INCREMENT für Tabelle `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID_PRODUCTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID_PRODUCTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT für Tabelle `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `ID_USUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Constraints for dumped tables
+-- Constraints der exportierten Tabellen
 --
 
 --
--- Constraints for table `carrito`
+-- Constraints der Tabelle `carrito`
 --
 ALTER TABLE `carrito`
   ADD CONSTRAINT `ID_PRODUCTO` FOREIGN KEY (`ID_PRODUCTO`) REFERENCES `productos` (`ID_PRODUCTO`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `ID_USUARIO` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuarios` (`ID_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `historial`
+-- Constraints der Tabelle `historial`
 --
 ALTER TABLE `historial`
   ADD CONSTRAINT `ID_PRODUCTO_FK` FOREIGN KEY (`ID_PRODUCTO`) REFERENCES `productos` (`ID_PRODUCTO`) ON DELETE NO ACTION ON UPDATE NO ACTION,

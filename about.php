@@ -31,6 +31,10 @@
     <link rel="shortcut icon" href="imgs/uj_logo.png" type="image/x-icon">
     <link rel="icon" href="imgs/uj_logo.png" type="image/x-icon">
 
+    <?php
+    include("connection.php");
+    ?>
+
 </head>
 <body>
 
@@ -56,7 +60,7 @@
 
             <div class="header-nav__content">
                 <h3>-> <?php 
-                if ($_SESSION['logged-in'] == true) {
+                if (isset($_SESSION['logged-in'])) {
                     echo $_SESSION['login_user']; 
                 }else{      
                     echo "No entro";
@@ -70,7 +74,7 @@
                     <li><a  href="cart.php" title="My Cart">Cart</a></li>
                     <li><a  href="#contact" title="Contact">Reach us</a></li>
                     <li>
-                    <?php if ($_SESSION['logged-in'] == true) {
+                    <?php if (isset($_SESSION['logged-in'])) {
                         echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";
                     }else{
                        echo "<a  href=\"login.php\" title=\"Session\">Log in</a>";
@@ -108,9 +112,6 @@
             <span class="header-menu-icon"></span>
         </a>
        
-    <?php
-    include("connection.php");
-    ?>
 
     </header> <!-- end s-header -->
 
@@ -128,7 +129,7 @@
         <div class="row about-desc" data-aos="fade-up">
             <div class="col-full">
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. 
+                Uncle Joe was born from the idea that anyone should be able to buy good quality and cheap e-liquids with great flavour. The company was founded at 2017. Since then we have provided many customers with great quality products. 
                 </p>
             </div>
         </div> <!-- end about-desc -->

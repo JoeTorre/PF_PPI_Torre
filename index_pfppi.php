@@ -171,17 +171,18 @@
 
         <div class="row footer-main">
 
+<br>
+<br>
             <div class="col-six tab-full left footer-desc">
 
-                <div class="footer-logo"></div>
-                Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
+                <h4>Contact Us</h4>
 
-            </div>
+                <p>If you want to reach us please dial: 5555555555. Else contactu us sending an email to the following address: customerservice@unclejoe.io</p></div>
 
             <div class="col-six tab-full right footer-subscribe">
 
-                <h4>Get Notified</h4>
-                <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim optio ut excepturi deserunt iusto porro.</p>
+                <h4>Visit Us</h4>
+                <p>Our factory and offices are located at: Blvd. Lomas Anáhuac #100, Huixquilucan, Estado de México.</p>
 
                 <div class="subscribe-form">
                     <form id="mc-form" class="group" novalidate="true">

@@ -31,8 +31,8 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/uj_logo.png" type="image/x-icon">
+    <link rel="icon" href="imgs/uj_logo.png" type="image/x-icon">
 
     <?php
     include("connection.php");
