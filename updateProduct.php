@@ -8,19 +8,29 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
     
-    if (isset($_GET["prod"]))
+    if (isset($_POST["delete"]))
     {
-        $idproducto = $_GET["prod"];
+        $idprod = $_POST["delete"];
     }
     else
     {
-        $idproducto = null;
+        $idprod = null;
     }
-    echo $idproducto;
-    $sql = "INSERT INTO carrito(ID_USUARIO, ID_PRODUCTO, CANTIDAD) VALUES ('" . $_SESSION['userid'] . "', '" . $idproducto . "', 1);";
+
+    if (isset($_POST["update"]))
+    {
+        $cantidad = $_POST["update"];
+    }
+    else
+    {
+        $cantidad = null;
+    }
+
+    echo $idprod;
+    $sql = "UPDATE carrito SET cantidad = '$cantidad' WHERE id_producto = '$idprod';";
 
      if(mysqli_query($link, $sql)){
-     	header('Location: products_liq.php');
+     	header('Location: cart.php');
     	//echo "Records inserted successfully.";
 	} else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);

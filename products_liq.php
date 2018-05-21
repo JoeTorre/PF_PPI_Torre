@@ -167,7 +167,7 @@
 
 
                     while($row = mysqli_fetch_array($result)) {
-
+                           $prod = $row['ID_PRODUCTO'];
                 ?>
     
                     <div class="masonry__brick" data-aos="fade-up">
@@ -185,7 +185,7 @@
                                 <p class="item-folio__cat"><?php echo $row['DESCRIPCION'];?></p>
                             </div>
                             
-                            <a href="<?php $_SESSION['liq-prod'] = $row['ID_PRODUCTO']; ?>insertCart.php" class="item-folio__project-link">
+                            <a href="insertCart.php?prod=<?php echo $prod; ?>" class="item-folio__project-link">
                                <i class="icon-shopping-cart"></i>
                             </a>
     
@@ -224,7 +224,7 @@
 
 
                     while($row = mysqli_fetch_array($result)) {
-
+                            $prod = $row['ID_PRODUCTO'];
                 ?>
     
                     <div class="masonry__brick" data-aos="fade-up">
@@ -242,7 +242,7 @@
                                 <p class="item-folio__cat"><?php echo $row['DESCRIPCION'];?></p>
                             </div>
                             
-                            <a href="<?php $_SESSION['liq-prod'] = $row['ID_PRODUCTO']; ?>insertCart.php" class="item-folio__project-link">
+                            <a href="insertCart.php?prod=<?php echo $prod; ?>" class="item-folio__project-link">
                                <i class="icon-shopping-cart"></i>
                             </a>
     

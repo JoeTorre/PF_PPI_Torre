@@ -8,32 +8,25 @@ $link = mysqli_connect("localhost", "root", "", "pf_ppi");
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+    $id_usuario = $_SESSION['userid'];
 
+    $carrito = mysqli_query($link,"SELECT * FROM carrito WHERE id_usuario = $id_usuario");
 
-	$query = mysqli_query($link, "SELECT ALL FROM carrito WHERE ID_USUARIO = '". $_SESSION['userid'] ."'");
+    while($hist=mysqli_fetch_array($carrito)){
 
+        $idprod = $hist['ID_PRODUCTO'];
+        $cant = $hist['CANTIDAD'];
 
-    while($row = mysqli_fetch_array($query)) {
-     $idu = $row['ID_USUARIO'];
-     $idprod = $row['ID_PRODUCTO'];
-     $cantidad = $row['CANTIDAD'];
-     $compra = 1;
+        $inserthist = mysqli_query($link, "INSERT INTO historial(ID_USUARIO, ID_PRODUCTO, COMPRA, CANTIDAD) VALUES('$id_usuario', '$idprod', 1, '$cant')");
+        $producto=mysqli_query($link, "SELECT * FROM productos WHERE ID_PRODUCTO = $idprod");
 
-     
-     $queryy = mysqli_query($link, "INSERT INTO historial(ID_USUARIO, ID_PRODUCTO, COMPRA, CANTIDAD) VALUES ('" . $_SESSION['userid'] . "', '$idprod', '$compra', '$cantidad');");
+                while($rowproducto=mysqli_fetch_array($producto)){
 
-     $count = mysqli_num_rows($queryy);
+                       $nuevacantidad = $rowproducto['EXISTENCIA']-$cant;
+                       $actualizar = mysqli_query($link,"UPDATE productos SET EXISTENCIA = $nuevacantidad WHERE ID_PRODUCTO = $idprod");
 
-    if($count == 1){
-    	echo "Records inserted successfully.";
-	} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-	}
+                }
+    }
 
-}
-
-
-     	//header('Location: index_pfppi.php');
-
-
+    $eliminarcarrito = mysqli_query($link,"DELETE FROM carrito WHERE ID_USUARIO = $id_usuario");
 ?>
