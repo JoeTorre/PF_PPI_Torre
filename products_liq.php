@@ -62,10 +62,10 @@
 
             <div class="header-nav__content">
                 <h3>-> <?php 
-                if ($_SESSION['logged-in'] == true) {
+                if (isset($_SESSION['logged-in'])) {
                     echo $_SESSION['login_user']; 
                 }else{      
-                    echo "No entro";
+                    echo "Sign up or Log in";
                 }
                 ?></h3>
                 
@@ -74,9 +74,9 @@
                     <li><a  href="about.php" title="About">About</a></li>
                     <li><a  href="products.html" title="Merchandise">Products</a></li>
                     <li><a  href="cart.php" title="My Cart">Cart</a></li>
-                    <li><a  href="#contact" title="Contact">Reach us</a></li>
+                    <li><a  href="index_pfppi.php#contact" title="Contact">Reach us</a></li>
                     <li>
-                    <?php if ($_SESSION['logged-in'] == true) {
+                    <?php if (isset($_SESSION['logged-in'])) {
                         echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";
                     }else{
                        echo "<a  href=\"login.php\" title=\"Session\">Log in</a>";
@@ -96,12 +96,6 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
                     </li>
                 </ul>
 
@@ -260,6 +254,10 @@
                 </div> <!-- end masonry -->
             </div> <!-- end col-full -->
         </div> <!-- end works-content -->
+
+        <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+        </div>
 
     </section> <!-- end s-works -->
 

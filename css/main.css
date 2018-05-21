@@ -1871,6 +1871,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     padding-top: 6rem;
     text-align: left;
 }
+
+.home-content__buttones {
+    padding-top: 6rem;
+    text-align: center;
+}
+
 .home-content__buttonlog {
     padding-top: 2rem;
     text-align: right;
@@ -1878,12 +1884,22 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .home-content__buttonlogo {
-    padding-top: 2rem;
+    padding-top: 0rem;
     text-align: right;
     margin-right: 16rem;
 }
 
 .home-content__buttons .btn {
+    width: 215px;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    margin: 1.5rem 1.5rem 0 0;
+    letter-spacing: .25rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.home-content__buttones .btn {
     width: 215px;
     border-color: #FFFFFF;
     color: #FFFFFF;
@@ -1899,6 +1915,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .home-content__buttons .btn:hover, 
 .home-content__buttons .btn:focus {
+    background: #FFFFFF !important;
+    color: #000000;
+}
+
+.home-content__buttones .btn:hover, 
+.home-content__buttones .btn:focus {
     background: #FFFFFF !important;
     color: #000000;
 }
@@ -2433,7 +2455,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-services {
-    padding-top: 16.2rem;
+    padding-top: 3.2rem;
     padding-bottom: 13.2rem;
     background-color: #FFFFFF;
     color: #757575;

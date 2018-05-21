@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
+<html>
 <head>
+    <title>Uncle Joe - Success</title>
 
     <!--- basic page needs
     ================================================== -->
@@ -40,10 +36,9 @@
     ?>
 
 </head>
+<body>
 
-<body id="top">
-
-    <!-- header
+ <!-- header
     ================================================== -->
     <header class="s-header">
 
@@ -54,18 +49,9 @@
 
         </div>
         <div class="home-content__buttonlog">
-                <?php 
-            if (isset($_SESSION['logged-in'])) {
-                if ($_SESSION['logged-in'] == true) {
-                        echo "<a href=\"./logout.php\" class=\"btn btn--strokey\">Log out</a>";
-                    }else{
-                       echo "<a href=\"./login.php\" class=\"btn btn--stroke\">Log in</a>";
-                    }
-                }else{
-                    echo "<a href=\"./login.php\" class=\"btn btn--stroke\">Log in</a>";
-                }
-                    ?>
-                
+                    <a href="./login.php" class="btn btn--stroke">
+                        Log in
+                    </a>
         </div>
 
         <nav class="header-nav">
@@ -74,10 +60,10 @@
 
             <div class="header-nav__content">
                 <h3>-> <?php 
-                if (isset($_SESSION['logged-in'])) {
+                if ($_SESSION['logged-in'] == true) {
                     echo $_SESSION['login_user']; 
                 }else{      
-                    echo "Log in or Sign up!";
+                    echo "No entro";
                 }
                 ?></h3>
                 
@@ -88,7 +74,7 @@
                     <li><a  href="cart.php" title="My Cart">Cart</a></li>
                     <li><a  href="#contact" title="Contact">Reach us</a></li>
                     <li>
-                    <?php if (isset($_SESSION['logged-in'])) {
+                    <?php if ($_SESSION['logged-in'] == true) {
                         echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";
                     }else{
                        echo "<a  href=\"login.php\" title=\"Session\">Log in</a>";
@@ -125,107 +111,31 @@
             <span class="header-menu-text">Menu</span>
             <span class="header-menu-icon"></span>
         </a>
-        
 
     </header> <!-- end s-header -->
 
-
-    <!-- home
+     <!-- about
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="imgs/bghome1.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id='about' class="s-about">
 
-        <div class="overlay"></div>
-        <div class="shadow-overlay"></div>
-
-        <div class="home-content">
-
-            <div class="row home-content__main">
-
-                <h3>Uncle Joe</h3>
-                <br>
-                <br>
-                <h1>
-                    Smoke quality.
-                </h1>
-
-                <div class="home-content__buttons">
-                    <a href="products.html" class="btn btn--stroke">
-                        Products
-                    </a>
-                    <a href="./signup.php" class="btn btn--stroke">
-                        Sign Up
-                    </a>
-                </div>
-
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Success!</h3>
+                <h1 class="display-1 display-1--light">Thanks <?php echo $_SESSION['login_user']; ?> for Buying!</h1>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        </div> <!-- end section-header -->
 
-    <!-- footer
-    ================================================== -->
-    <footer id="contact">
-
-        <div class="row footer-main">
-
-            <div class="col-six tab-full left footer-desc">
-
-                <div class="footer-logo"></div>
-                Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
-
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                Your order is on it's way! You can either continue shopping or log out using the top right menu. </p>
+                <div class="home-content__buttones">
+                <a href="./index_pfppi.php" class="btn btn--stroke">Go Home</a>
             </div>
-
-            <div class="col-six tab-full right footer-subscribe">
-
-                <h4>Get Notified</h4>
-                <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim optio ut excepturi deserunt iusto porro.</p>
-
-                <div class="subscribe-form">
-                    <form id="mc-form" class="group" novalidate="true">
-                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                        <input type="submit" name="subscribe" value="Subscribe">
-                        <label for="mc-email" class="subscribe-message"></label>
-                    </form>
-                </div>
-
             </div>
+        </div> <!-- end about-desc -->
 
-        </div> <!-- end footer-main -->
-
-        <div class="row footer-bottom">
-
-            <div class="col-twelve">
-                <div class="copyright">
-                    <span>© Copyright Glint 2017</span> 
-                    <span>Site Template by <a href="https://www.colorlib.com/">Colorlib</a></span>  
-                </div>
-
-                <div class="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-        </div> <!-- end footer-bottom -->
-
-    </footer> <!-- end footer -->
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-            <div class="line-scale-pulse-out">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
-
+    </section> <!-- end s-about -->
 
     <!-- Java Script
     ================================================== -->
@@ -234,5 +144,4 @@
     <script src="js/main.js"></script>
 
 </body>
-
 </html>

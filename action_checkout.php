@@ -29,4 +29,5 @@ if($link === false){
     }
 
     $eliminarcarrito = mysqli_query($link,"DELETE FROM carrito WHERE ID_USUARIO = $id_usuario");
+    header('Location: success.php');
 ?>

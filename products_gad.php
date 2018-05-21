@@ -74,7 +74,7 @@
                     <li><a  href="about.php" title="About">About</a></li>
                     <li><a  href="products.html" title="Merchandise">Products</a></li>
                     <li><a  href="cart.php" title="My Cart">Cart</a></li>
-                    <li><a  href="#contact" title="Contact">Reach us</a></li>
+                    <li><a  href="index_pfppi.php#contact" title="Contact">Reach us</a></li>
                     <li>
                     <?php if ($_SESSION['logged-in'] == true) {
                         echo "<a  href=\"./logout.php\" title=\"Session\">Log out</a>";

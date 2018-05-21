@@ -61,88 +61,178 @@
             <div class="col-full">
                 <h3 class="subhead">Store Overview</h3>
                 <h1 class="display-2">ADMIN</h1>
+                <h3 class="subhead" id="h3">Select from the right menu.</h3>
             </div>
         </div> <!-- end section-header -->
 
-        <div class="row services-list block-1-2 block-tab-full">
+        <ul class="home-social">
+            <li>
+                <a href="#" id="btnH"><i class="icon-newspaper" aria-hidden="true"></i><span>History</span></a>
+            </li>
+            <li>
+                <a href="#" id="btnC"><i class="icon-form" aria-hidden="true"></i><span>Change</span></a>
+            </li>
+            <li>
+                <a href="#" id="btnA"><i class="icon-plus" aria-hidden="true"></i><span>Add</span></a>
+            </li>
+        </ul>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon">
-                    <i class="icon-paint-brush"></i>
-                </div>
-                <div class="service-text">
-                    <h3 class="h2">Brand Identity</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
-                    </p>
-                </div>
-            </div>
+                <?php
+                    $total = 0;
+                    $con=mysqli_connect("localhost", "root", "", "pf_ppi");
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon">
-                    <i class="icon-group"></i>
-                </div>
-                <div class="service-text">
-                    <h3 class="h2">Illustration</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
-                    </p>
-                </div>
-            </div>
+                    // Check connection
+                    if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    }
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon">
-                    <i class="icon-megaphone"></i>
-                </div>  
-                <div class="service-text">
-                    <h3 class="h2">Marketing</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
-                    </p>
-                </div>
-            </div>
+                ?>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon">
-                    <i class="icon-earth"></i>
-                </div>
-                <div class="service-text">
-                    <h3 class="h2">Web Design</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
-                    </p>
-                </div>
-            </div>
+            <div class="services-list" id="H">
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon">
-                    <i class="icon-cube"></i>
+            <div class="table100 ver3 m-b-110">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">Ticket</th>
+                                    <th class="cell100 column2">User</th>
+                                    <th class="cell100 column3">Product</th>
+                                    <th class="cell100 column4">Quantity</th>
+                                    <th class="cell100 column5">Price</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                <?php
+
+                    $result = mysqli_query($con,"SELECT h.compra as COMPRA, u.nombre as NOMBRE, p.nombre as NOMBREE, h.cantidad as CANTIDAD, p.precio as PRECIO FROM productos p, historial h, usuarios u WHERE u.ID_USUARIO = h.ID_USUARIO AND p.ID_PRODUCTO = h.ID_PRODUCTO");
+
+
+                    while($row = mysqli_fetch_array($result)) {
+                ?>
+
+                    <div class="table100-body js-pscroll">
+                        <table>
+                            <tbody>
+                                <tr class="row100 body">
+                                    <td class="cell100 column1"><?php echo $row['COMPRA']; ?></td>
+                                    <td class="cell100 column2"><?php echo $row['NOMBRE']; ?></td>
+                                    <td class="cell100 column3"><?php echo $row['NOMBREE']; ?></td>
+                                    <td class="cell100 column4"><?php echo $row['CANTIDAD']; ?></td>
+                                    <td class="cell100 column5">$ <?php $subtotal = $row['PRECIO'] * $row['CANTIDAD']; echo $subtotal; ?> MXN</td>
+                                </tr>
+                                <?php
+                                    $total = $total + $subtotal;
+                                    }
+                                ?>
+                                <tr class="row100 body">
+                                    <td class="cell100 column1" style="color: #39b54a">TOTAL REVENUE:</td>
+                                    <td class="cell100 column2"></td>
+                                    <td class="cell100 column3"></td>
+                                    <td class="cell100 column4"></td>
+                                    <td class="cell100 column5" style="color: #39b54a">$ <?php echo $total; ?> MXN</td>
+                                    <td class="cell100 column4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <h3 class="h2">Packaging Design</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
-                    </p>
-                </div>
-            </div>
+
+       </div> <!--end services-list -->
+
+       <div class="services-list" id="C">
+            <form method="POST" action="">
+                Product ID: <input type="number" name="prodid" value="prodid">
+                <input type="submit" name="submit" onclick="select()">
+            </form>
+
+                <?php
+
+                    if (isset($_POST['prodid'])) {
+                        $prodid = $_POST['prodid'];
+                
+                    $result = mysqli_query($con,"SELECT * FROM productos WHERE ID_PRODUCTO = '" . $prodid . "' ");
+
+
+                    while($row = mysqli_fetch_array($result)) {
+                        $idprod = $row['ID_PRODUCTO'];
+                        $nombre = $row['NOMBRE'];
+                        $medida = $row['MEDIDA'];
+                        $descripcion = $row['DESCRIPCION'];
+                        $imagen = $row['IMAGEN'];
+                        $precio = $row['PRECIO'];
+                        $existencia = $row['EXISTENCIA'];
+                        $marca = $row['MARCA'];
+                        $origen = $row['ORIGEN'];
+                ?>
+
+                    <form action="updateProducts.php" method="POST"> 
+                        <input type="text" value="<?php echo $nombre ?>" name="nombre" class="full-width">
+                        <input type="text" value="<?php echo $medida ?>" name="medida" class="full-width">
+                        <input type="text" value="<?php echo $descripcion ?>" name="descripcion" class="full-width">
+                        <input type="text" value="<?php echo $imagen ?>" name="imagen" class="full-width">
+                        <input type="number" value="<?php echo $precio ?>" name="precio" class="full-width">
+                        <input type="number" value="<?php echo $existencia ?>" name="existencia" class="full-width">
+                        <input type="text" value="<?php echo $marca ?>" name="marca" class="full-width">
+                        <input type="text" value="<?php echo $origen ?>" name="origen" class="full-width">
+                        <input type="hidden" name="idprod" value="<?php echo $idprod; ?>">
+
+                        <button type="submit" style="height: 5rem; font-size: 1.5rem;" class="full-width btn--primary">Update</button>
+                    </form>
+
+                <?php
+                    }
+                }
+                  
+                ?>
+
+       </div> <!--end services-list -->
+
+       <div class="services-list" id="A">
+             <form name="givForm" id="givForm" method="post" action="addProduct.php" novalidate="novalidate">
+                    <!--<fieldset> -->
     
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"><i class="icon-lego-block"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Web Development</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
-                    </p>
-                </div>
-            </div>
-
-        </div> <!-- end services-list -->
+                    <div class="form-field">
+                        <input name="nombre" type="text" id="nombre" placeholder="Product Name" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="medida" type="text" id="medida" placeholder="Measure" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="descripcion" id="descripcion" placeholder="Description" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="imagen" id="imagen" placeholder="Image Path" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input type="number" name="precio" id="precio" placeholder="Price" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input type="number" name="existencia" id="existencia" placeholder="Stock" required="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="marca" id="marca" placeholder="Producer" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="origen" id="origen" placeholder="Country" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <button type="submit" style="height: 5rem; font-size: 1.5rem;" class="full-width btn--primary" name="submit_register">Insert</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!--</fieldset> -->
+                </form>
+        </div> <!--end services-list -->
 
     </section> <!-- end s-services -->
     
@@ -151,6 +241,34 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+
+            $('#H').hide();
+            $('#C').hide();
+            $('#A').hide();
+
+    $('#btnH').on('click',function(){
+            $('#H').show();
+            $('#C').hide();
+            $('#A').hide();
+            document.getElementById("h3").innerHTML = "History";
+    });
+
+    $('#btnC').on('click',function(){
+            $('#C').show();
+            $('#H').hide();
+            $('#A').hide();
+            document.getElementById("h3").innerHTML = "Change";
+    });
+
+    $('#btnA').on('click',function(){
+            $('#A').show();
+            $('#H').hide();
+            $('#C').hide();
+            document.getElementById("h3").innerHTML = "Add product";
+    });
+    </script>
 
 </body>
 
